@@ -1,0 +1,25 @@
+<div class="flex align-items-center justify-content-end">
+  <p-button
+    label="Add Project"
+    icon="pi pi-plus"
+    (onClick)="showModal = true"
+  ></p-button>
+</div>
+<app-project-list></app-project-list>
+
+@if(showModal){
+<p-dialog
+  appendTo="body"
+  styleClass="responsive w-full h-full md:h-auto md:w-6 xl:w-4"
+  [(visible)]="showModal"
+  header="Add project"
+  [modal]="true"
+  [draggable]="false"
+  [blockScroll]="true"
+>
+  <app-project-form
+    (saved)="showModal = false"
+    (canceled)="showModal = false"
+  ></app-project-form>
+</p-dialog>
+}

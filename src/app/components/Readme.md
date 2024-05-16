@@ -1,0 +1,1 @@
+"components" folder contains all the components used in each feature view/page

@@ -1,0 +1,1 @@
+"layout" folder contains all the application layouts or application shell (main container, sidebars, footers, top menus etc...)

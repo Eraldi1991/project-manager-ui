@@ -1,0 +1,1 @@
+"views" folder contains all the modules/features and their pages

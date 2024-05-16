@@ -1,0 +1,33 @@
+@if(controlName && formControl; as formControl){
+<div class="field w-full" [ngClass]="styleClass">
+  <label [for]="inputId" class="font-semibold m-2">
+    @if(icon; as icon){
+    <i class="mr-2" [ngClass]="icon"></i>
+    }
+    {{ label }}
+  </label>
+
+  <span
+    class="inputfield w-full flex justify-content-center p-input-icon-right"
+  >
+    <ng-content></ng-content>
+    @if(errors){
+      <i
+        *ngIf="errors"
+        class="mi mi-info text-red-300"
+        [ngClass]="validationIconStyleClass"
+      ></i>
+    }
+  </span>
+  @if(errors){
+  <div class="mt-2 ml-2">
+    @for(validation of validations; track validation){
+    @if(errors[validation.parameter]){
+    <small class="text-red-300">
+      {{ validation.message }}
+    </small>
+    } }
+  </div>
+  }
+</div>
+}

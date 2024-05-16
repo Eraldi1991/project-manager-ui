@@ -1,0 +1,1 @@
+"models" folder contains all the models/types (classes, interfaces, types) used by the application

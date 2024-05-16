@@ -1,0 +1,2 @@
+"shared" folder contains all the shared functionalities that can be used by different application components.
+In shared folder you can place components, pipes, directives, utility functions. This functionalities should not be related to application data, but for general use that you can in other projects as well.

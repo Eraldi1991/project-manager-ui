@@ -1,0 +1,57 @@
+<form [formGroup]="projectForm" class="grid grid-nogutter">
+  <app-form-field
+    class="col-12"
+    label="Title *"
+    inputId="title"
+    controlName="title"
+    [validations]="[
+      { parameter: 'required', message: 'Project title is required.' }
+    ]"
+  >
+    <input
+      pInputText
+      class="w-full"
+      id="title"
+      formControlName="title"
+      autofocus
+    />
+  </app-form-field>
+
+  <app-form-field
+    class="col-12"
+    label="Description *"
+    inputId="description"
+    controlName="description"
+  >
+    <textarea
+      pInputTextarea
+      class="w-full"
+      id="description"
+      formControlName="description"
+      autofocus
+    ></textarea>
+  </app-form-field>
+
+  <div class="mt-4 w-full flex">
+    <p-button
+      class="ml-auto"
+      styleClass=""
+      label="Cancel"
+      size="small"
+      icon="mi mi-close"
+      [text]="true"
+      [disabled]="isSubmitting"
+      (onClick)="cancel()"
+    ></p-button>
+    <p-button
+      class="ml-2"
+      styleClass=""
+      [label]="project ? 'Save project' : 'Add project'"
+      size="small"
+      icon="mi mi-check"
+      [disabled]="!projectForm.valid"
+      [loading]="isSubmitting"
+      (onClick)="submit()"
+    ></p-button>
+  </div>
+</form>

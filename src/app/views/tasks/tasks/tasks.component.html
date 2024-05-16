@@ -1,0 +1,26 @@
+<div class="flex align-items-center justify-content-end">
+    <p-button
+      label="Add Task"
+      icon="pi pi-plus"
+      (onClick)="showModal = true"
+    ></p-button>
+  </div>
+  <app-task-list></app-task-list>
+  
+  @if(showModal){
+  <p-dialog
+    appendTo="body"
+    styleClass="responsive w-full h-full md:h-auto md:w-6 xl:w-4"
+    [(visible)]="showModal"
+    header="Add task"
+    [modal]="true"
+    [draggable]="false"
+    [blockScroll]="true"
+  >
+    <app-task-form
+      (saved)="showModal = false"
+      (canceled)="showModal = false"
+    ></app-task-form>
+  </p-dialog>
+  }
+  
